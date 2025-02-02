@@ -11,6 +11,7 @@ public class MensajeService {
     private MensajeRepository mensajeRepository;
     // Guardar un mensaje
     public Mensaje guardarMensaje(Mensaje mensaje) {
+        System.out.println("Guardando mensaje: " + mensaje);  // Depuración
         return mensajeRepository.save(mensaje);
     }
     // Obtener todos los mensajes

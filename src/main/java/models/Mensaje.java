@@ -12,6 +12,7 @@ public class Mensaje {
     private String contenido; // Texto del mensaje
     private String color; // Color del texto
     private LocalDateTime fechaEnvio; // Fecha y hora del mensaje
+    private String imageUrl; // URL de la imagen en GridFS
 
     // Constructor vacío
     public Mensaje() {
@@ -19,15 +20,26 @@ public class Mensaje {
 
     // Constructor completo
     public Mensaje(String autor, String username, String contenido,
-                   String color, LocalDateTime fechaEnvio) {
+                   String color, LocalDateTime fechaEnvio, String imageURL) {
         this.autor = autor;
         this.username = username;
         this.contenido = contenido;
         this.color = color;
         this.fechaEnvio = fechaEnvio;
+        this.imageUrl=imageURL;
     }
 
     // Getters y Setters
+
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public String getId() {
         return id;
     }
@@ -74,5 +86,18 @@ public class Mensaje {
 
     public void setFechaEnvio(LocalDateTime fechaEnvio) {
         this.fechaEnvio = fechaEnvio;
+    }
+
+    @Override
+    public String toString() {
+        return "Mensaje{" +
+                "id='" + id + '\'' +
+                ", autor='" + autor + '\'' +
+                ", username='" + username + '\'' +
+                ", contenido='" + contenido + '\'' +
+                ", color='" + color + '\'' +
+                ", fechaEnvio=" + fechaEnvio +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
     }
 }

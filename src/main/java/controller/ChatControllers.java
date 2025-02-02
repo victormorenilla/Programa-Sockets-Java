@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import repositories.MensajeRepository;
 
 import java.time.LocalDateTime;
+
 @Controller
 public class ChatControllers {
     @Autowired
@@ -15,6 +16,7 @@ public class ChatControllers {
     @MessageMapping("/mensaje")  // Ruta de solicitud del cliente
     @SendTo("/chat/mensaje")     // Ruta de respuesta para los clientes
     public Mensaje recibeMensaje(Mensaje mensaje) {
+        System.out.println("Mensaje recibido: " + mensaje);
         // Configurar atributos adicionales del mensaje
         mensaje.setFechaEnvio(LocalDateTime.now()); // Hora de envío
         // Validar si el usuario envió un nick; si no, asignar uno genérico

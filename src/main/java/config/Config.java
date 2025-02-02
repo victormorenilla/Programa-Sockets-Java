@@ -18,7 +18,7 @@ public class Config implements WebSocketMessageBrokerConfigurer {
                 .withSockJS();
     }
     @Override
-    public void configureMessageBroker(MessageBrokerRegistry registry) {
+    public void configureMessageBroker( MessageBrokerRegistry registry) {
         registry.enableSimpleBroker("/chat/");
         // El broker se usará para enviar los mensajes a los clientes
         registry.setApplicationDestinationPrefixes("/app");
